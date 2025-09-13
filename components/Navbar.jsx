@@ -15,13 +15,17 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
     }
 
     useEffect(()=>{
-        window.addEventListener('scroll', ()=>{
-            if(scrollY > 50){
-                setIsScroll(true)
-            }else{
-                setIsScroll(false)
+        if (typeof window !== 'undefined') {
+            const handleScroll = () => {
+                if(window.scrollY > 50){
+                    setIsScroll(true)
+                }else{
+                    setIsScroll(false)
+                }
             }
-        })
+            window.addEventListener('scroll', handleScroll);
+            return () => window.removeEventListener('scroll', handleScroll);
+        }
     },[])
 
   return (

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { motion } from "motion/react"
 
-const Contact = () => {
+const Contact = ({isDarkMode}) => {
 
   const [result, setResult] = useState("");
 

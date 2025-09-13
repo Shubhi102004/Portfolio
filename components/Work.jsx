@@ -33,8 +33,8 @@ const Work = ({isDarkMode}) => {
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.7, duration: 0.5 }}
       className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
-      Welcome to my Backend, Game and Other  Development Projects Portfolio.! Explore a collection of my projects 
-      showcasing my skills in Backend Development, Game Development.</motion.p>
+      Welcome to my Full Stack Development Projects Portfolio! Explore a collection of my projects 
+      showcasing my skills in Frontend Development, Backend Development, and Full Stack Web Applications.</motion.p>
 
     <motion.div
     initial={{ opacity: 0 }}
@@ -46,8 +46,12 @@ const Work = ({isDarkMode}) => {
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ duration: 0.3 }}
             key={index}
-            className='aspect-square rounded-xl relative cursor-pointer group overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-lg hover:shadow-xl'
-            onClick={() => window.open(project.link, '_blank')}>
+            className='aspect-square rounded-xl relative cursor-pointer group overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-lg hover:shadow-xl astro-hover-card'
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.open(project.link, '_blank');
+              }
+            }}>
                 <div className='relative w-full h-full'>
                     <Image 
                         src={project.bgImage} 
@@ -80,7 +84,7 @@ const Work = ({isDarkMode}) => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
-        className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'>
+        className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover astro-hover-button'>
             {showAll ? 'Show Less' : 'Show More'} 
             <Image src={isDarkMode ? assets.right_arrow_bold_dark : assets.right_arrow_bold} alt='Right arrow' className='w-4'/>
         </motion.button>
@@ -91,3 +95,4 @@ const Work = ({isDarkMode}) => {
 }
 
 export default Work
+

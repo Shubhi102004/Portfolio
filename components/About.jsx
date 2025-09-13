@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 
 const About = ({isDarkMode}) => {
   return (
-    <motion.div id='about' className='w-full px-4 sm:px-6 md:px-[8%] lg:px-[12%] py-8 scroll-mt-20'
+    <motion.div id='about' className='w-full px-4 sm:px-6 md:px-[8%] lg:px-[12%] py-10 sm:py-16 scroll-mt-20'
     initial={{opacity: 0}}
     whileInView={{opacity: 1}}
     transition={{duration: 1}}
@@ -21,14 +21,14 @@ const About = ({isDarkMode}) => {
       initial={{opacity: 0, y: -20}}
       whileInView={{opacity: 1, y: 0}}
       transition={{duration: 0.5, delay: 0.5}}
-      className='text-center text-3xl sm:text-4xl md:text-5xl mb-6 font-Ovo'>
+      className='text-center text-3xl sm:text-4xl md:text-5xl mb-8 sm:mb-12 font-Ovo'>
         About me</motion.h2>
 
         <motion.div 
         initial={{opacity: 0}}
         whileInView={{opacity: 1}}
         transition={{duration: 0.8}}
-        className='flex w-full flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-8 -mt-8 sm:-mt-12'>
+        className='flex w-full flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-12'>
             <motion.div
             initial={{opacity: 0, scale: 0.9}}
             whileInView={{opacity: 1, scale: 1}}
@@ -40,15 +40,15 @@ const About = ({isDarkMode}) => {
             initial={{opacity: 0}}
             whileInView={{opacity: 1}}
             transition={{duration: 0.6, delay: 0.8}}
-            className='flex-1 min-w-0 px-2 sm:px-0'>
-                <p className='mb-4 sm:mb-6 text-sm sm:text-base max-w-2xl font-Ovo'
-                >I am a passionate Game and Backend Developer with a strong interest in creating engaging gameplay and reliable systems. As a student, I actively contribute to open-source projects, constantly learning and improving. I enjoy solving real-world problems through clean code, creativity, and collaboration.</p>
+            className='flex-1 min-w-0 px-2 sm:px-4 lg:px-0'>
+                <p className='mb-6 sm:mb-8 text-sm sm:text-base max-w-2xl font-Ovo leading-relaxed'
+                >I am a passionate Full Stack Developer with expertise in both frontend and backend technologies. I specialize in creating complete web applications with modern frameworks and technologies. As a student, I actively contribute to open-source projects, constantly learning and improving. I enjoy solving real-world problems through clean, scalable code and innovative solutions.</p>
 
                 <motion.ul
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1}}
                 transition={{duration: 0.8, delay: 1}}
-                className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mb-4 sm:mb-6'>
+                className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-2xl mb-6 sm:mb-8'>
                     {infoList.map(({icon, iconDark, title, description,about}, index)=>(
                         <motion.li 
                         whileHover={{scale: 1.05}}

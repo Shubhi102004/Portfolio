@@ -5,3 +5,80 @@
 *{
   font-family: Outfit;
 }
+
+/* Astro-style hover effects */
+.astro-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.astro-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.astro-hover-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.astro-hover-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(138, 43, 226, 0.3);
+  box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+}
+
+.astro-hover-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.astro-hover-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.astro-hover-button:hover::before {
+  left: 100%;
+}
+
+.astro-hover-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.astro-hover-link {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.astro-hover-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #8a2be2, #4b0082);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.astro-hover-link:hover::after {
+  width: 100%;
+}
+
+.astro-hover-link:hover {
+  color: #8a2be2;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, [role="button"], input, textarea, select {
+  transition: all 0.3s ease;
+}
