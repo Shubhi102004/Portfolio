@@ -1,4 +1,4 @@
-import { assets, infoList, toolsData } from '@/assets/assets'
+import { assets, infoList, toolsDataNew } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "motion/react"
@@ -80,12 +80,27 @@ const About = ({isDarkMode}) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.6 }}
                 className='flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4'>
-                    {toolsData.map((tool, index)=>(
+                    {toolsDataNew.map((tool, index)=>(
                         <motion.li 
                         whileHover={{ scale: 1.1 }}
                         className='flex items-center justify-center w-10 sm:w-12 md:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
-                         key={index}>
-                            <Image src={tool} alt='Tool' className='w-4 sm:w-5 md:w-7'/>
+                         key={index}
+                         title={tool.name}>
+                            <img 
+                                src={tool.url} 
+                                alt={tool.alt} 
+                                className='w-4 sm:w-5 md:w-7'
+                                onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'block';
+                                }}
+                            />
+                            <div 
+                                className='w-4 sm:w-5 md:w-7 text-center text-xs font-bold text-gray-600 dark:text-gray-300'
+                                style={{display: 'none'}}
+                            >
+                                {tool.name.charAt(0)}
+                            </div>
                         </motion.li>
                     ))}
                 </motion.ul>

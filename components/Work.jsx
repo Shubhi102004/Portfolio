@@ -1,11 +1,11 @@
-import { assets, workData } from '@/assets/assets'
+import { assets, workDataNew } from '@/assets/assets'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { motion } from "motion/react"
 
 const Work = ({isDarkMode}) => {
   const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? workData : workData.slice(0, 4);
+  const displayedProjects = showAll ? workDataNew : workDataNew.slice(0, 4);
 
   return (
     <motion.div
@@ -78,7 +78,7 @@ const Work = ({isDarkMode}) => {
         ))}
     </motion.div>
 
-    {workData.length > 4 && (
+    {workDataNew.length > 4 && (
         <motion.button 
         onClick={() => setShowAll(!showAll)}
         initial={{ opacity: 0 }}
